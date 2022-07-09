@@ -23,6 +23,7 @@ const Login =  ({ history }) => {
 
   const loginHandler = async (e) => {
     e.preventDefault();
+     auth.logIn();
 
     const config = {
       header: {
@@ -42,7 +43,7 @@ const Login =  ({ history }) => {
       localStorage.setItem("authToken", data.token);
 
       Navigate('/');  
-      auth.logIn()
+     
       
     } catch (error) {
       setError(error.response.data.error);
